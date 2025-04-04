@@ -1,0 +1,36 @@
+name: "Deploy to GitHub Pages"
+description: "Deploy the project to GitHub Pages"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        -   name: 📥 Checkout del código
+            uses: actions/checkout@v4
+
+        -   name: ⚙️ Configurar Node.js
+            uses: actions/setup-node@v4
+            with:
+                node-version: 22
+                cache: "npm"
+
+        -   name: 📦 Instalar dependencias
+            run: npm install
+
+        -   name: 🌎 Configurar variables de entorno
+            run: echo "VITE_APP_PASSWORD=${{ secrets.VITE_PASS }}" >> .env
+
+        -   name: 🔨 Construir la aplicación
+            run: npm run build
+
+        -   name: 🚀 Desplegar en GitHub Pages
+            uses: jamesives/github-pages-deploy-action@v4
+            with:
+                branch: gh-pages
+                folder: dist
