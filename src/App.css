@@ -40,3 +40,16 @@ h1 {
   text-align: left;
   text-decoration: underline;
 }
+
+input {
+  width: 85vw;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 25px;
+}
+
+button {
+  background-color: #4171ae;
+}
