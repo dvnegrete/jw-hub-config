@@ -1,0 +1,42 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  color: #e7e6e4;
+  background-color: #e36600;
+  padding: 2rem;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.list {
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+}
+
+.list li {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: 15px 0;
+}
+
+.list li span {
+  padding: 0 15px;
+  min-width: 55px;
+}
+
+.list li a {
+  text-align: left;
+  text-decoration: underline;
+}
